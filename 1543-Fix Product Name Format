@@ -1,0 +1,4 @@
+select lower(trim(product_name)) product_name, date_format(sale_date,'%Y-%m') sale_date, count(sale_id) total
+from Sales
+group by lower(trim(product_name)), date_format(sale_date,'%Y-%m')
+order by lower(trim(product_name)), date_format(sale_date,'%Y-%m')
